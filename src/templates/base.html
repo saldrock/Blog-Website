@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<div style="border:  2px solid black">
-	<h2>This is a Header</h2>
-</div>
+	<title>Title</title>
+	{%if request.user.is_authenticated%}
+		<p><a href="{%url 'home'%}">Home</a> | <a href="{% url 'logout'%}">logout</a></p>	
+
+		<p>Hello, {{request.user.username}} </p>
+	{% else %}
+		<p>
+			<a href="{% url 'home'%}">Home</a> | 
+			<a href="{% url 'register'%}">Register</a> | 
+			<a href="{% url 'login' %}">Login</a>
+		</p>
+	{%endif%}
+	<hr>
+
+
+
 </head>
 <body>
 
@@ -12,8 +25,7 @@
 {% endblock content %}
 </body>
 <footer>
-	<div style="border:  2px solid black">
-		<h2>This is a footer</h2>
-	</div>
+	<hr>
+	<p>Bernard Hollands Blog | 2020</p>
 </footer>
 </html>

@@ -1,19 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content%}
-<div style="border: 2px solid #000;">
-	<h1>This is the body</h1>
-	<p>Here is where you put the stuff that should be in the body of your websites</p>
-	<p>{{some_string}}</p>
-	<p>{{some_number}}</p>
 
-	{%for account in accounts%}
+<h3>Registered Users</h3>
+{%for account in accounts%}
 	<p>{{account}}</p>
-	{%endfor%}
+{%endfor%}
 	
 	
-	
-</div>
-
-
 {% endblock content%}
